@@ -8,9 +8,12 @@ import java.util.Map;
 
 @ConfigurationProperties(prefix = "litemall.express")
 public class ExpressProperties {
+
     private boolean enable;
     private String appId;
     private String appKey;
+
+
     private List<Map<String, String>> vendors = new ArrayList<>();
 
     public boolean isEnable() {
