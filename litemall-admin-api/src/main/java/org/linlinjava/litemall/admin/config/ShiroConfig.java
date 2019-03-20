@@ -1,10 +1,10 @@
 package org.linlinjava.litemall.admin.config;
 
+import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.realm.Realm;
 import org.apache.shiro.session.mgt.SessionManager;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
-import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.linlinjava.litemall.admin.shiro.AdminAuthorizingRealm;
 import org.linlinjava.litemall.admin.shiro.AdminWebSessionManager;

@@ -2,10 +2,14 @@ package org.linlinjava.litemall.admin.dao;
 
 import java.math.BigDecimal;
 
+
 public class Product {
     String[] specifications;
+
     BigDecimal price;
+
     Integer number;
+
     String url;
 
     public String[] getSpecifications() {

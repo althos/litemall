@@ -5,12 +5,17 @@ import org.linlinjava.litemall.db.domain.LitemallGoodsAttribute;
 import org.linlinjava.litemall.db.domain.LitemallGoodsProduct;
 import org.linlinjava.litemall.db.domain.LitemallGoodsSpecification;
 
-public class GoodsAllinone {
+import java.io.Serializable;
+
+
+
+public class GoodsAllinone implements Serializable {
+
     LitemallGoods goods;
+
     LitemallGoodsSpecification[] specifications;
+
     LitemallGoodsAttribute[] attributes;
-    // 这里采用 Product 再转换到 LitemallGoodsProduct
-    LitemallGoodsProduct[] products;
 
     public LitemallGoods getGoods() {
         return goods;
@@ -18,14 +23,6 @@ public class GoodsAllinone {
 
     public void setGoods(LitemallGoods goods) {
         this.goods = goods;
-    }
-
-    public LitemallGoodsProduct[] getProducts() {
-        return products;
-    }
-
-    public void setProducts(LitemallGoodsProduct[] products) {
-        this.products = products;
     }
 
     public LitemallGoodsSpecification[] getSpecifications() {
@@ -43,5 +40,21 @@ public class GoodsAllinone {
     public void setAttributes(LitemallGoodsAttribute[] attributes) {
         this.attributes = attributes;
     }
+
+    public LitemallGoodsProduct[] getProducts() {
+        return products;
+    }
+
+    public void setProducts(LitemallGoodsProduct[] products) {
+        this.products = products;
+    }
+
+    /**
+     * 这里采用 Product 再转换到 LitemallGoodsProduct
+     *
+     * **/
+    LitemallGoodsProduct[] products;
+
+
 
 }

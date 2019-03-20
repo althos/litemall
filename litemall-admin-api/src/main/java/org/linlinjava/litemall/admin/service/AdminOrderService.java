@@ -90,7 +90,7 @@ public class AdminOrderService {
      * @param body 订单信息，{ orderId：xxx }
      * @return 订单退款操作结果
      */
-    @Transactional
+    @Transactional(rollbackFor = Exception.class)
     public Object refund(String body) {
         Integer orderId = JacksonUtil.parseInteger(body, "orderId");
         String refundMoney = JacksonUtil.parseString(body, "refundMoney");
@@ -235,10 +235,14 @@ public class AdminOrderService {
         comment.setType((byte) 2);
         comment.setValueId(commentId);
         comment.setContent(content);
-        comment.setUserId(0);                 // 评价回复没有用
-        comment.setStar((short) 0);           // 评价回复没有用
-        comment.setHasPicture(false);        // 评价回复没有用
-        comment.setPicUrls(new String[]{});  // 评价回复没有用
+        // 评价回复没有用
+        comment.setUserId(0);
+        comment.setStar((short) 0);
+        // 评价回复没有用
+        comment.setHasPicture(false);
+        // 评价回复没有用
+        comment.setPicUrls(new String[]{});
+        // 评价回复没有用
         commentService.save(comment);
 
         return ResponseUtil.ok();

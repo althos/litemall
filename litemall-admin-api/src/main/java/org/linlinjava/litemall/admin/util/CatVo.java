@@ -3,6 +3,8 @@ package org.linlinjava.litemall.admin.util;
 import java.util.List;
 
 public class CatVo {
+
+
     private Integer value = null;
     private String label = null;
     private List children = null;

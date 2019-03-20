@@ -144,7 +144,7 @@ public class AdminGoodsService {
      * 因此这里会拒绝管理员编辑商品，如果订单或购物车中存在商品。
      * 所以这里可能需要重新设计。
      */
-    @Transactional
+    @Transactional(rollbackFor = Exception.class)
     public Object update(GoodsAllinone goodsAllinone) {
         Object error = validate(goodsAllinone);
         if (error != null) {
@@ -202,7 +202,7 @@ public class AdminGoodsService {
         return ResponseUtil.ok();
     }
 
-    @Transactional
+    @Transactional(rollbackFor = Exception.class)
     public Object delete(LitemallGoods goods) {
         Integer id = goods.getId();
         if (id == null) {
@@ -217,7 +217,7 @@ public class AdminGoodsService {
         return ResponseUtil.ok();
     }
 
-    @Transactional
+    @Transactional(rollbackFor = Exception.class)
     public Object create(GoodsAllinone goodsAllinone) {
         Object error = validate(goodsAllinone);
         if (error != null) {

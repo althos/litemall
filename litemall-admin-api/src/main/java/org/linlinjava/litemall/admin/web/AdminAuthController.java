@@ -40,9 +40,9 @@ public class AdminAuthController {
     @Autowired
     private LitemallPermissionService permissionService;
 
-    /*
+    /**
      *  { username : value, password : value }
-     */
+     **/
     @PostMapping("/login")
     public Object login(@RequestBody String body) {
         String username = JacksonUtil.parseString(body, "username");
@@ -66,8 +66,9 @@ public class AdminAuthController {
         return ResponseUtil.ok(currentUser.getSession().getId());
     }
 
-    /*
-     *
+    /**
+     * 退出登录
+     * @return
      */
     @RequiresAuthentication
     @PostMapping("/logout")
