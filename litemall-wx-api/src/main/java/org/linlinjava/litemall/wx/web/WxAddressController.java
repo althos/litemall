@@ -58,17 +58,21 @@ public class WxAddressController extends GetRegionService {
 		List<Map<String, Object>> addressVoList = new ArrayList<>(addressList.size());
 		List<LitemallRegion> regionList = getLitemallRegions();
 		for (LitemallAddress address : addressList) {
+
 			Map<String, Object> addressVo = new HashMap<>();
 			addressVo.put("id", address.getId());
 			addressVo.put("name", address.getName());
 			addressVo.put("mobile", address.getMobile());
 			addressVo.put("isDefault", address.getIsDefault());
+
 			Callable<String> provinceCallable = () -> regionList.stream().filter(region -> region.getId().equals(address.getProvinceId())).findAny().orElse(null).getName();
 			Callable<String> cityCallable = () -> regionList.stream().filter(region -> region.getId().equals(address.getCityId())).findAny().orElse(null).getName();
 			Callable<String> areaCallable = () -> regionList.stream().filter(region -> region.getId().equals(address.getAreaId())).findAny().orElse(null).getName();
+
 			FutureTask<String> provinceNameCallableTask = new FutureTask<>(provinceCallable);
 			FutureTask<String> cityNameCallableTask = new FutureTask<>(cityCallable);
 			FutureTask<String> areaNameCallableTask = new FutureTask<>(areaCallable);
+
 			executorService.submit(provinceNameCallableTask);
 			executorService.submit(cityNameCallableTask);
 			executorService.submit(areaNameCallableTask);

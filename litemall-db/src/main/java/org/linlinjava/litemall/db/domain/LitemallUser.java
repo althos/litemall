@@ -1,5 +1,7 @@
 package org.linlinjava.litemall.db.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -49,6 +51,7 @@ public class LitemallUser {
      *
      * @mbg.generated
      */
+    @JsonIgnore
     private String password;
 
     /**
