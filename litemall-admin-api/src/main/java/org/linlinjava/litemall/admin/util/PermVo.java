@@ -3,9 +3,21 @@ package org.linlinjava.litemall.admin.util;
 import java.util.List;
 
 public class PermVo {
+    /**
+     * id
+     */
     private String id;
+    /**
+     * 名称
+     */
     private String label;
+    /**
+     * api
+     */
     private String api;
+    /**
+     * 按钮
+     */
     private List<PermVo> children;
 
     public String getId() {

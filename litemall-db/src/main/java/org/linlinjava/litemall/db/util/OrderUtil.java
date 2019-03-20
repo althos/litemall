@@ -5,7 +5,7 @@ import org.linlinjava.litemall.db.domain.LitemallOrder;
 import java.util.ArrayList;
 import java.util.List;
 
-/*
+/**
  * 订单流程：下单成功－》支付订单－》发货－》收货
  * 订单状态：
  * 101 订单生成，未支付；102，下单未支付用户取消；103，下单未支付超期系统自动取消
@@ -130,8 +130,8 @@ public class OrderUtil {
         } else if (showType.equals(4)) {
             // 待评价订单
             status.add((short) 401);
-//            系统超时自动取消，此时应该不支持评价
-//            status.add((short)402);
+            // 系统超时自动取消，此时应该不支持评价
+            // status.add((short)402);
         } else {
             return null;
         }

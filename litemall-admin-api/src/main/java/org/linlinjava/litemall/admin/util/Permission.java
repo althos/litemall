@@ -5,8 +5,17 @@ import org.linlinjava.litemall.admin.annotation.RequiresPermissionsDesc;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 public class Permission {
+    /**
+     * 权限码
+     */
     private RequiresPermissions requiresPermissions;
+    /**
+     * 权限名
+     */
     private RequiresPermissionsDesc requiresPermissionsDesc;
+    /**
+     * 对应的api
+     */
     private String api;
 
     public RequiresPermissions getRequiresPermissions() {

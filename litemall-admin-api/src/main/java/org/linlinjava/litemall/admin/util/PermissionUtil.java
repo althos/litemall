@@ -19,6 +19,7 @@ public class PermissionUtil {
 
     public static List<PermVo> listPermVo(List<Permission> permissions) {
         List<PermVo> root = new ArrayList<>();
+
         for (Permission permission : permissions) {
             RequiresPermissions requiresPermissions = permission.getRequiresPermissions();
             RequiresPermissionsDesc requiresPermissionsDesc = permission.getRequiresPermissionsDesc();
@@ -73,8 +74,7 @@ public class PermissionUtil {
                 leftPerm.setLabel(requiresPermissionsDesc.button());
                 leftPerm.setApi(api);
                 perm2.getChildren().add(leftPerm);
-            }
-            else{
+            } else {
                 // TODO
                 // 目前限制Controller里面每个方法的RequiresPermissionsDesc注解是唯一的
                 // 如果允许相同，可能会造成内部权限不一致。
@@ -142,7 +142,7 @@ public class PermissionUtil {
 
     public static Set<String> listPermissionString(List<Permission> permissions) {
         Set<String> permissionsString = new HashSet<>();
-        for(Permission permission : permissions){
+        for (Permission permission : permissions) {
             permissionsString.add(permission.getRequiresPermissions().value()[0]);
         }
         return permissionsString;

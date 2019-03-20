@@ -10,7 +10,9 @@ import java.util.Map;
  */
 abstract class BaseConfig {
 
-    //所有的配置均保存在该 HashMap 中
+    /**
+     * 所有的配置均保存在该 HashMap 中*
+     * */
     protected static Map<String, String> configs = new HashMap<>();
 
     /**

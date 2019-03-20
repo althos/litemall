@@ -8,6 +8,10 @@ import java.time.format.DateTimeFormatter;
  */
 public class DateTimeUtil {
 
+
+
+    public static final String CN_DATE_FORMAT = "yyyy年MM月dd日 HH:mm:ss";
+
     /**
      * 格式 yyyy年MM月dd日 HH:mm:ss
      *
@@ -15,9 +19,8 @@ public class DateTimeUtil {
      * @return
      */
     public static String getDateTimeDisplayString(LocalDateTime dateTime) {
-        DateTimeFormatter dtf2 = DateTimeFormatter.ofPattern("yyyy年MM月dd日 HH:mm:ss");
+        DateTimeFormatter dtf2 = DateTimeFormatter.ofPattern(CN_DATE_FORMAT);
         String strDate2 = dtf2.format(dateTime);
-
         return strDate2;
     }
 }
