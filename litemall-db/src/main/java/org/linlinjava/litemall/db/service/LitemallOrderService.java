@@ -58,7 +58,9 @@ public class LitemallOrderService {
         return (int) litemallOrderMapper.countByExample(example);
     }
 
-    // TODO 这里应该产生一个唯一的订单，但是实际上这里仍然存在两个订单相同的可能性
+    /**
+     *  TODO 这里应该产生一个唯一的订单，但是实际上这里仍然存在两个订单相同的可能性
+     */
     public String generateOrderSn(Integer userId) {
         DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyyMMdd");
         String now = df.format(LocalDate.now());

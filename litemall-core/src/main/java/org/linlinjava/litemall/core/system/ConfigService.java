@@ -41,8 +41,9 @@ class ConfigService {
         List<LitemallSystem> list = litemallSystemConfigService.queryAll();
         for (LitemallSystem item : list) {
             //符合条件，添加
-            if (item.getKeyName().startsWith(prefix))
+            if (item.getKeyName().startsWith(prefix)) {
                 BaseConfig.addConfig(item.getKeyName(), item.getKeyValue());
+            }
         }
     }
 

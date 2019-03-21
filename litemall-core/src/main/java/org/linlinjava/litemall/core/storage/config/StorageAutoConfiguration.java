@@ -20,13 +20,13 @@ public class StorageAutoConfiguration {
         StorageService storageService = new StorageService();
         String active = this.properties.getActive();
         storageService.setActive(active);
-        if (active.equals("local")) {
+        if ("local".equals(active)) {
             storageService.setStorage(localStorage());
-        } else if (active.equals("aliyun")) {
+        } else if ("aliyun".equals(active)) {
             storageService.setStorage(aliyunStorage());
-        } else if (active.equals("tencent")) {
+        } else if ("tencent".equals(active)) {
             storageService.setStorage(tencentStorage());
-        } else if (active.equals("qiniu")) {
+        } else if ("qiniu".equals(active)) {
             storageService.setStorage(qiniuStorage());
         } else {
             throw new RuntimeException("当前存储模式 " + active + " 不支持");

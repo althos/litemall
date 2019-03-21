@@ -56,8 +56,9 @@ public class QCodeService {
      * @param goodName
      */
     public String createGoodShareImage(String goodId, String goodPicUrl, String goodName) {
-        if (!SystemConfig.isAutoCreateShareImage())
+        if (!SystemConfig.isAutoCreateShareImage()) {
             return "";
+        }
 
         try {
             //创建该商品的二维码

@@ -32,8 +32,9 @@ abstract class BaseConfig {
         //先遍历删除该 prefix 所有配置
         for (Iterator<Map.Entry<String, String>> it = configs.entrySet().iterator(); it.hasNext(); ) {
             Map.Entry<String, String> item = it.next();
-            if (item.getKey().startsWith(prefix))
+            if (item.getKey().startsWith(prefix)) {
                 it.remove();
+            }
         }
 
         ConfigService.getSystemConfigService().reloadConfig(prefix);
