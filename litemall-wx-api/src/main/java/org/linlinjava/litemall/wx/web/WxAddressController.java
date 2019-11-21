@@ -65,8 +65,20 @@ public class WxAddressController extends GetRegionService {
 			addressVo.put("mobile", address.getMobile());
 			addressVo.put("isDefault", address.getIsDefault());
 
-			Callable<String> provinceCallable = () -> regionList.stream().filter(region -> region.getId().equals(address.getProvinceId())).findAny().orElse(null).getName();
-			Callable<String> cityCallable = () -> regionList.stream().filter(region -> region.getId().equals(address.getCityId())).findAny().orElse(null).getName();
+			Callable<String> provinceCallable = () -> regionList
+					.stream()
+					.filter(region -> region.getId()
+							.equals(address.getProvinceId()))
+					.findAny()
+					.orElse(null)
+					.getName();
+			Callable<String> cityCallable = () ->
+					regionList.stream()
+							.filter(region -> region.getId()
+									.equals(address.getCityId()))
+							.findAny()
+							.orElse(null)
+							.getName();
 			Callable<String> areaCallable = () -> regionList.stream().filter(region -> region.getId().equals(address.getAreaId())).findAny().orElse(null).getName();
 
 			FutureTask<String> provinceNameCallableTask = new FutureTask<>(provinceCallable);

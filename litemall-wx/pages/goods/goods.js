@@ -56,7 +56,7 @@ Page({
   },
   handleSetting: function(e) {
       var that = this;
-      // console.log(e)
+       console.log(e)
       if (!e.detail.authSetting['scope.writePhotosAlbum']) {
           wx.showModal({
               title: '警告',
@@ -407,6 +407,7 @@ Page({
 
   onLoad: function(options) {
     // 页面初始化 options为页面跳转所带来的参数
+    //debugger
     if (options.id) {
       this.setData({
         id: parseInt(options.id)

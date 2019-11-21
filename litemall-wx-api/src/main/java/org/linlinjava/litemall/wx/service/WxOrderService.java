@@ -359,9 +359,11 @@ public class WxOrderService {
 
         // 有团购活动
         if (grouponRules != null) {
-            order.setGrouponPrice(grouponPrice);    //  团购价格
+            //  团购价格
+            order.setGrouponPrice(grouponPrice);
         } else {
-            order.setGrouponPrice(new BigDecimal(0.00));    //  团购价格
+            //  团购价格
+            order.setGrouponPrice(new BigDecimal(0.00));
         }
 
         // 添加订单表项
